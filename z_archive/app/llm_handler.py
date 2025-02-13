@@ -1,12 +1,13 @@
 import openai
 import re
-from app.config import OPENAI_API_KEY
+import os
+#from app.config import OPENAI_API_KEY
 
 def call_llm(prompt):
     """
     Calls OpenAI's LLM with the given prompt.
     """
-    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
     response = client.Completion.create(
         model="gpt-4",
         prompt=prompt,
