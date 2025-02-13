@@ -1,0 +1,49 @@
+{
+    "safe": "0x179a8BDDa1AB5fEF17AAF6Ff0FFCb2875925668F",
+    "to": "0x2F5213757a486C4DCDB4708AE53b834b9445bbA7",
+    "value": "0",
+    "data": "0xa9059cbb0000000000000000000000006a9ee871c0bd10323121b1f0e9c7212c48695d9900000000000000000000000000000000000000000000152d02c7e14af6800000",
+    "operation": 0,
+    "gasToken": "0x0000000000000000000000000000000000000000",
+    "safeTxGas": 0,
+    "baseGas": 0,
+    "gasPrice": "0",
+    "refundReceiver": "0x0000000000000000000000000000000000000000",
+    "nonce": 69,
+    "executionDate": null,
+    "submissionDate": "2025-02-11T07:22:50.036151Z",
+    "modified": "2025-02-11T07:22:50.087662Z",
+    "blockNumber": null,
+    "transactionHash": null,
+    "safeTxHash": "0xf2a741bdcdb17ff7b0b2a7c4609863e91bc9364a048b272571dd64b991fe4226",
+    "proposer": "0x6A9Ee871c0Bd10323121b1F0e9C7212c48695d99",
+    "proposedByDelegate": null,
+    "executor": null,
+    "isExecuted": false,
+    "isSuccessful": null,
+    "ethGasPrice": null,
+    "maxFeePerGas": null,
+    "maxPriorityFeePerGas": null,
+    "gasUsed": null,
+    "fee": null,
+    "origin": "{}",
+    "dataDecoded": {
+      "method": "transfer",
+      "parameters": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x6A9Ee871c0Bd10323121b1F0e9C7212c48695d99"
+        },
+        {
+          "name": "value",
+          "type": "uint256",
+          "value": "100000000000000000000000"
+        }
+      ]
+    },
+    "confirmationsRequired": 2,
+    "confirmations": 1,
+    "trusted": true,
+    "signatures": null
+  }
