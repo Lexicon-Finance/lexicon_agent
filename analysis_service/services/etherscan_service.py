@@ -1,7 +1,6 @@
 import os
 import aiohttp
 from typing import Optional, Tuple
-import json
 
 class EtherscanService:
     def __init__(self):

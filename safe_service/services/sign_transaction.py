@@ -1,4 +1,3 @@
-
 import logging
 from dataclasses import dataclass
 #from dotenv import load_dotenv
@@ -44,19 +43,6 @@ async def send_safe_transaction(safe_tx_hash: str, safe_address: str):
     logging.info(f"Connecting to Ethereum network via {RPC_URL}")
     ethereum_client = EthereumClient(RPC_URL)
 
-        # Instantiate a Safe contract instance
-    safe = Safe(SAFE_ADDRESS, ethereum_client)
-
-        # Create a Safe transaction
-    #safe_tx = safe.build_multisig_tx(
-   #         tx_details.to_address,
-   #         tx_details.value,
-   #         HexBytes(tx_details.data),
-   #         gas_price=tx_details.gas_price,
-    #        gas_limit=tx_details.gas_limit
-     #   )
-
-         # Instantiate the Transaction Service API
     transaction_service_api = TransactionServiceApi(
             network=EthereumNetwork.SEPOLIA,  # Ensure this matches your network
             ethereum_client=ethereum_client

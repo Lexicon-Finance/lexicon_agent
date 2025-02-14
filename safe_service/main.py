@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes import api_router
-
+#from routes import api_router
+from fastapi import HTTPException
+from services.sign_transaction import send_safe_transaction
 # Initialize FastAPI app
 app = FastAPI(title="Safe Transaction API")
 
@@ -15,11 +16,26 @@ app.add_middleware(
 )
 
 # Include routes from routes.py
-app.include_router(api_router)
+#app.include_router(api_router)
 
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
+
+@app.post("/send_safe_transaction/{safe_address}/{safe_tx_hash}")
+async def send_transaction(safe_address: str, safe_tx_hash: str):
+    """
+    Endpoint to send a Safe multisig transaction.
+    
+    Parameters:
+        safe_address: The address of the Safe contract
+        safe_tx_hash: The hash of the transaction to be executed
+    """
+    try:
+        result = await send_safe_transaction(safe_tx_hash=safe_tx_hash, safe_address=safe_address)
+        return {"status": "success", "data": result}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     import uvicorn

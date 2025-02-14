@@ -125,7 +125,7 @@ def identify_address_type_tool(input_data: str) -> str:
     """
     try:
         # Initialize Web3 with Sepolia provider
-        w3 = Web3(Web3.HTTPProvider('https://eth-sepolia.g.alchemy.com/v2/demo'))
+        w3 = Web3(Web3.HTTPProvider('https://1rpc.io/sepolia'))
         
         # Check if the address is valid
         if not w3.is_address(input_data):
