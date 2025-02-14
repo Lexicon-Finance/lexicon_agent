@@ -1,0 +1,30 @@
+# Python
+**/__pycache__/
+*.py[cod]
+*.so
+.Python
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment
+.env
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Test
+.pytest_cache/
+.coverage
+
+# Logs
+*.log
+
+# Local development
+*.db
+*.sqlite3 

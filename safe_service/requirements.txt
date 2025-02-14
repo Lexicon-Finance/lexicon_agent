@@ -1,0 +1,14 @@
+# Core dependencies
+fastapi>=0.100.0
+uvicorn>=0.22.0
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+
+# Web3 and Ethereum
+web3>=6.0.0
+hexbytes>=0.3.1
+safe-eth-py>=0.0.1
+
+# HTTP and API
+requests>=2.31.0
+aiohttp>=3.8.0

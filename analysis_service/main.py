@@ -1,8 +1,4 @@
 from fastapi import FastAPI, HTTPException
-from typing import Dict, Any
-#from services.llm_handler import LLMHandler
-#from services.intent_matcher import IntentMatcher
-from services.risk_detector import RiskDetector
 from services.simulation_handler import simulate_transaction
 from fastapi.middleware.cors import CORSMiddleware
 from services.etherscan_service import EtherscanService
@@ -206,6 +202,10 @@ async def match_intent(
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
 
 if __name__ == "__main__":
     import uvicorn

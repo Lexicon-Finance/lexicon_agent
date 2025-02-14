@@ -1,7 +1,21 @@
-<<<<<<< HEAD
-# LangChain Project
+# Lexicon Agent
 
-This is a basic LangChain project setup that demonstrates how to use LangChain with OpenAI.
+A sophisticated natural language processing system that combines risk analysis and intent matching capabilities.
+
+## Project Structure
+
+```
+lexicon_agent/
+├── analysis_service/
+│   ├── agent/
+│   │   ├── match_intent.py
+│   │   └── risk_detect.py
+│   ├── services/
+│   │   └── risk_detector.py
+│   └── main.py
+└── safe_service/
+    └── config.py
+```
 
 ## Setup
 
@@ -17,19 +31,32 @@ pip install -r requirements.txt
 ```
 
 3. Configure environment variables:
-- Add your OpenAI API key to the `.env` file:
+Create a `.env` file in the project root and add your configuration:
 ```
 OPENAI_API_KEY=your-api-key-here
+# Add other required environment variables
 ```
+
+## Features
+
+- Intent matching system
+- Risk detection and analysis
+- Natural language processing capabilities
+- Configurable safety parameters
 
 ## Usage
 
-Run the main script:
+Run the analysis service:
 ```bash
-python main.py
+python analysis_service/main.py
 ```
 
-The example script demonstrates using LangChain with OpenAI by asking "What is LangChain?". You can modify the question in `main.py` or extend the code to build more complex chains.
-=======
-# lexicon_agent
->>>>>>> origin/main
+## Development
+
+The project is structured into two main services:
+- Analysis Service: Handles intent matching and risk detection
+- Safe Service: Manages configuration and safety parameters
+
+## License
+
+[Add your license information here]
