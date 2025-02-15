@@ -22,8 +22,8 @@ def match_transaction_intent(
     gas_price: str = "0"
 ) -> Generator[Dict[str, Any], None, None]:
     """
-    Given an intent description and transaction metadata, determine if they match.
-    Returns a generator that yields conversation messages.
+    You are a expert of EVM transactions.
+    Given an intent description and transaction metadata, analyze deeply and determine if they match.
     
     Args:
         intent: Natural language description of intended transaction
@@ -37,7 +37,9 @@ def match_transaction_intent(
     """
     
     template = '''
-    Analyze if the following transaction matches the stated intent.
+    You are a expert of analyzing EVM transactions.
+    Given an user's intent description and transaction metadata, analyze deeply and determine if they match.
+    always run a simulation of the transaction to check the asset changes and balance changes.
     Use the available tools if necessary: RunSimulation, GetContractDetails, GetPastTransactions, Search, IdentifyAddressType.
 
     {tools}
@@ -54,18 +56,13 @@ def match_transaction_intent(
     gas_price: {gas_price}
     dataDecoded: {dataDecoded}
 
-    Check steps:
-    1. Understand the user's intent - what are they trying to achieve?
-    2. Analyze the transaction details to determine what it actually does
-    3. Run simulation if needed to verify transaction outcome
-    4. Compare intended vs actual outcome
-
     context:
     1, from is user's address
     2, gas and gas_price are 0 by default
+    3, if your initial analysis is not confident, you can run simulation to get the result
+    4, if the transaction calls a method that does not match the intent, get the contract source code and analyze it.
     
-    
-    Provide a match score between 0 (completely different) and 100 (perfect match) along with your reasoning.
+    Provide a match score between 0 (completely different) and 100 (perfect match) along with your comprehensive reasoning.
     Explain any discrepancies between intent and actual transaction.
     '''
     

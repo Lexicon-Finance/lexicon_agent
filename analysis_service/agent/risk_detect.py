@@ -26,7 +26,7 @@ def analyze_transaction(
     """
     
     template = '''
-    Analyze the following transaction and determine its risk level.
+    You are expert of risk detection on EVM transactions. Analyze the following transaction deeply and determine its risk level.
     Use the available tools if necessary: RunSimulation, GetContractDetails, GetPastTransactions, Search, IdentifyAddressType.
 
     {tools}
@@ -49,7 +49,7 @@ def analyze_transaction(
     1, the transaction is initiated from a safe wallet, there's no need checking the from address.
     2, gas and gas price are 0 becasue it is a safe tx.
     
-    Provide a final risk score between 0 (low risk) and 100 (high risk) along with your reasoning.
+    Provide a final risk score between 0 (low risk) and 100 (high risk) along with comprehensive analysis.
     '''
     
     prompt = template.format(
